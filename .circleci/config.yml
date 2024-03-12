@@ -10,7 +10,6 @@ jobs:
     steps:
     # Important: This sets up your GITHUB_WORKSPACE environment variable
     - checkout
-    - run: ansible --version
     - ansible-playbook/install
     - ansible-playbook/playbook:
         playbook: wordpress-nginx/site.yml
