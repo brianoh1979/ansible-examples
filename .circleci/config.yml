@@ -1,0 +1,15 @@
+version: 2.1
+
+orbs:
+  ansible-playbook: orbss/ansible-playbook@0.0.5
+
+jobs:
+  build:
+    docker:
+      - image:circleci/python:2.7-stretch    
+    steps:
+    # Important: This sets up your GITHUB_WORKSPACE environment variable
+    - checkout
+    - ansible-playbook/playbook:
+        playbook: wordpress-nginx/site.yml
+        playbook-options: ansible-lint
