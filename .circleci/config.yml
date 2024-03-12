@@ -12,4 +12,3 @@ jobs:
     - checkout
     - ansible-playbook/playbook:
         playbook: wordpress-nginx/site.yml
-        playbook-options: ansible-lint
